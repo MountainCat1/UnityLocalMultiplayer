@@ -4,13 +4,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Transform movingTransform;
     public float speed = 1f;
     
     private Vector2 _move = Vector2.zero;
 
     private void Update()
     {
-        transform.position += (Vector3)_move * (speed * Time.deltaTime);
+        movingTransform.position += (Vector3)_move * (speed * Time.deltaTime);
     }
 
     public void Move(InputAction.CallbackContext context)
